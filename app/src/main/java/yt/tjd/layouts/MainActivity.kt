@@ -68,7 +68,7 @@ class MainActivity : ComponentActivity() {
 
             Spacer(modifier = Modifier.height(24.dp))
 
-            Column(
+            RadialGrid(
               modifier = Modifier.weight(1f)
             ) {
 
@@ -79,7 +79,7 @@ class MainActivity : ComponentActivity() {
                 PieSlice(
                   sweep = sweep,
                   color = color,
-                  modifier = Modifier.size(100.dp)
+                  modifier = Modifier.size(100.dp).sweep(sweep)
                 )
               }
             }
