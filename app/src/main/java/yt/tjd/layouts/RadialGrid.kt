@@ -57,7 +57,7 @@ fun RadialGrid(
 }
 
 class RadialGridScope {
-  fun Modifier.sweep(sweep: Float) = then(RadialGridChildData(sweep))
+  fun Modifier.sweep(sweep: Float) = then(RadialGridChildData((sweep * PI / 180f).toFloat()))
 }
 
 data class RadialGridChildData(val sweep: Float) : ParentDataModifier {
