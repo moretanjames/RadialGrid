@@ -63,6 +63,3 @@ class RadialGridScope {
 data class RadialGridChildData(val sweep: Float) : ParentDataModifier {
   override fun Density.modifyParentData(parentData: Any?) = this@RadialGridChildData
 }
-
-
-// .sweep(sweep * (PI / 180).toFloat())

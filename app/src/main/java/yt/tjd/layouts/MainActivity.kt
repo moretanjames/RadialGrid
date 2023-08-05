@@ -6,9 +6,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Canvas
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -16,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Remove
@@ -40,7 +37,6 @@ import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.dp
 import yt.tjd.layouts.ui.theme.LayoutsTheme
-import kotlin.math.PI
 import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
@@ -72,14 +68,16 @@ class MainActivity : ComponentActivity() {
               modifier = Modifier.weight(1f)
             ) {
 
-              val sweep by remember { derivedStateOf { (360f / slices) }}
+              val sweep by remember { derivedStateOf { (360f / slices) } }
 
               repeat(slices) {
                 val color = Color(Random.nextInt())
                 PieSlice(
                   sweep = sweep,
                   color = color,
-                  modifier = Modifier.size(100.dp).sweep(sweep)
+                  modifier = Modifier
+                    .size(100.dp)
+                    .sweep(sweep)
                 )
               }
             }
